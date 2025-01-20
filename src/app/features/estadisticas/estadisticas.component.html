@@ -13,6 +13,8 @@
       <thead>
         <tr>
           <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
           <th>Juego 1</th>
           <th>Juego 2</th>
           <th>Juego 3</th>
@@ -24,6 +26,8 @@
       <tbody>
         <tr *ngFor="let respuesta of respuestasBasica">
           <td>{{ respuesta.id }}</td>
+          <td>{{ respuesta.nombre}}</td>
+          <td>{{ respuesta.apellido }}</td>
           <td>{{ respuesta.juego1 }}</td>
           <td>{{ respuesta.juego2 }}</td>
           <td>{{ respuesta.juego3 }}</td>
@@ -39,6 +43,8 @@
       <thead>
         <tr>
           <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
           <th>Juego 1</th>
           <th>Juego 2</th>
           <th>Juego 3</th>
@@ -53,6 +59,8 @@
       <tbody>
         <tr *ngFor="let respuesta of respuestasSuperior">
           <td>{{ respuesta.id }}</td>
+          <td>{{ respuesta.nombre }}</td>
+          <td>{{ respuesta.apellido }}</td>
           <td>{{ respuesta.juego1_respuesta }}</td>
           <td>{{ respuesta.juego2_respuesta }}</td>
           <td>{{ respuesta.juego3_respuesta }}</td>
