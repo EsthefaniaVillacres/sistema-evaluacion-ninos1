@@ -1,0 +1,38 @@
+<div class="game-container">
+    <div class="header">
+        <h2>Sección 4: Motivación y Actitud hacia los Juegos Digitales</h2>
+      <p>¡Responde las preguntas y construye tu motivación hacia los juegos digitales!</p>
+      <p><strong>Puntaje actual:</strong> {{ score }} / 10</p>
+    </div>
+  
+    <div class="question" *ngIf="!gameOver">
+      <p>{{ currentQuestion.question }}</p>
+      <div class="options">
+        <button
+          *ngFor="let option of currentQuestion.options"
+          class="option-button"
+          (click)="selectOption(option)"
+        >
+          {{ option.text }}
+        </button>
+      </div>
+    </div>
+  
+    <!-- Modal del juego 6 -->
+<div class="modal" *ngIf="showGameOverModal">
+  <div class="modal-content">
+    <h2>¡Juego terminado!</h2>
+    <p>Tu puntaje final en este juego es: {{ score }}</p>
+    <button class="boton-seguir" (click)="nextActivity()">Siguiente actividad</button>
+  </div>
+</div>
+<app-final-results
+  [showFinalModal]="showFinalModal"
+  [nivel]="nivel"
+  [motivationalMessage]="motivationalMessage"
+  (closeModal)="finalizarSesion()"
+></app-final-results>
+
+  </div>
+  
+  

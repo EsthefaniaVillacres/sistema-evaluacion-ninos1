@@ -1,0 +1,132 @@
+/* Contenedor principal del juego */
+.juego-container {
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Contenedor de los iconos */
+  .iconos-secuencia {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap; /* Permite que los iconos se ajusten a la pantalla */
+  }
+  
+  /* Iconos individuales */
+  .icono {
+    font-size: 40px;
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Efecto hover en los iconos */
+  .icono:hover {
+    border-color: #2196f3;
+  }
+  
+  /* Estilo del icono correcto */
+  .correcto {
+    border-color: green;
+    background-color: #c8e6c9;
+  }
+  
+  /* Estilo del icono incorrecto */
+  .incorrecto {
+    border-color: red;
+    background-color: #ffcdd2;
+  }
+  
+  /* Estilo de la retroalimentación */
+  .retroalimentacion p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  /* Retroalimentación exitosa */
+  .retroalimentacion .exito {
+    color: green;
+  }
+  
+  /* Retroalimentación de error */
+  .retroalimentacion .error {
+    color: red;
+  }
+  
+  /* Estilo del cronómetro */
+  .cronometro {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  /* Botones */
+  .acciones {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  button {
+    font-size: 16px;
+  }
+  
+  /* Estilo responsivo */
+  @media (max-width: 768px) {
+    .iconos-secuencia {
+      gap: 5px;
+    }
+  
+    .icono {
+      font-size: 30px;
+      width: 50px;
+      height: 50px;
+    }
+  
+    .retroalimentacion p {
+      font-size: 16px;
+    }
+  
+    .cronometro {
+      font-size: 14px;
+    }
+  
+    button {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .icono {
+      font-size: 24px;
+      width: 40px;
+      height: 40px;
+    }
+  
+    .retroalimentacion p {
+      font-size: 14px;
+    }
+  
+    .cronometro {
+      font-size: 12px;
+    }
+  
+    button {
+      font-size: 12px;
+    }
+  }
+  

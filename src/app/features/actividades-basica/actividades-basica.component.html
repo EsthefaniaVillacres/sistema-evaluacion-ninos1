@@ -1,0 +1,48 @@
+<div class="actividad-container">
+  <!-- Cronómetro -->
+  <div class="cronometro">
+    <strong>Tiempo restante: {{ tiempoRestante }} segundos</strong>
+  </div>
+
+  <h2>Sección 1: Memoria</h2>
+  <h3>Memoria a corto plazo</h3>
+  <p *ngIf="mostrandoPalabras">
+     Memoriza las imágenes en el orden correcto. Tienes 20 segundos.
+  </p>
+  <p *ngIf="!mostrandoPalabras">
+     Organiza las imágenes en el orden correcto.
+  </p>
+
+  <!-- Íconos durante la etapa de memorización -->
+  <div class="orden-correcto" *ngIf="mostrandoPalabras">
+    <mat-icon *ngFor="let icon of iconosOriginales" style="font-size: 36px;">{{ icon }}</mat-icon>
+  </div>
+
+  <!-- Drag & Drop durante la etapa de organización -->
+  <div class="drag-drop-container" cdkDropList (cdkDropListDropped)="reordenarIconos($event)" *ngIf="!mostrandoPalabras">
+    <div
+      class="drag-item"
+      *ngFor="let icon of iconosDesordenados; let i = index"
+      cdkDrag
+    >
+      <mat-icon style="font-size: 36px;">{{ icon }}</mat-icon>
+    </div>
+  </div>
+
+  <!-- Botón para verificar la respuesta -->
+  <div class="botones">
+    <button mat-raised-button color="primary" (click)="verificarOrden()" *ngIf="!resultadoVisible && !mostrandoPalabras">
+      <mat-icon>check_circle</mat-icon> Verificar Respuesta
+    </button>
+  </div>
+
+  <!-- Modal de resultado -->
+  <div class="resultado-modal" *ngIf="resultadoVisible">
+    <h2>{{ mensajeResultado }}</h2>
+    <div class="estrellas">
+      <mat-icon *ngFor="let star of estrellas" style="color: gold; font-size: 36px;">star</mat-icon>
+    </div>
+    <p>Puntaje: {{ palabrasCorrectas }}/10</p>
+    <button mat-raised-button color="primary" (click)="seguir()">Seguir</button>
+  </div>
+</div>

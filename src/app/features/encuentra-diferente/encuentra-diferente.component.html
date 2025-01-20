@@ -1,0 +1,41 @@
+<div class="juego-container">
+    <div class="cronometro">Tiempo restante: {{ tiempoRestante }} segundos</div>
+    <h2>Sección 2: Atención y Concentración</h2>
+    <h3>Encuentra el recuadro diferente:</h3>
+    <p>Nivel: {{ nivel }}/{{ maxNiveles }}</p>
+    <p>Puntaje: {{ puntaje }}/10</p>
+  
+    <div class="grid">
+      <div *ngFor="let fila of grid; let i = index" class="fila">
+        <div
+          *ngFor="let emoji of fila; let j = index"
+          class="cuadro"
+          [ngClass]="emoji"
+          (click)="seleccionarElemento(i, j)"
+        ></div>
+      </div>
+    </div>
+  
+    <div class="mensaje">{{ mensaje }}</div>
+  
+    <!-- Modal -->
+    <div class="modal" *ngIf="mostrarModal">
+        <div class="modal-content">
+          <h3>{{ obtenerMensajeFinal() }}</h3>
+          <p>Puntuación Final: {{ puntaje }}</p>
+      
+          <div class="estrellas">
+            <span *ngFor="let estrella of [1, 2, 3]">
+              <mat-icon *ngIf="puntaje >= estrella * 3" color="accent">star</mat-icon>
+              <mat-icon *ngIf="puntaje < estrella * 3" color="accent">star_border</mat-icon>
+            </span>
+          </div>
+      
+          <p>¡Gracias por jugar! ¿Estás listo para continuar?</p>
+          <button class="boton-seguir" (click)="continuar()">Seguir</button>
+        </div>
+      </div>
+      
+      
+  </div>
+  

@@ -1,0 +1,97 @@
+.game-container {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .header {
+    margin-bottom: 20px;
+    background-color: #3f51b5;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .question {
+    margin: 20px auto;
+  }
+  
+  .options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .option-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .option-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  .stars {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  
+  .stars .filled {
+    color: gold;
+  }
+  
+  .stars .empty {
+    color: lightgray;
+  }
+  
+  .boton-seguir {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .boton-seguir:hover {
+    background-color: #45a049;
+  }
+  .modal-content img {
+    margin: 20px 0;
+  }
+  

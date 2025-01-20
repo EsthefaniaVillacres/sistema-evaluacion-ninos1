@@ -1,0 +1,37 @@
+<div class="game-container">
+    <div class="header">
+        <h2> Sección 3: Toma de decisiones</h2>
+      <p>¡Ayuda al personaje a encontrar la salida del laberinto!</p>
+      <p><strong>Intentos restantes:</strong> {{ attemptsLeft }}</p>
+      <p><strong>Progreso:</strong> {{ progress }} / 16</p>
+    </div>
+  
+    <div class="maze">
+      <!-- Personaje -->
+      <fa-icon [icon]="characterIcon" class="character" [style.left.%]="characterPosition.x" [style.top.%]="characterPosition.y"></fa-icon>
+    </div>
+  
+    <div class="options">
+        <button class="option-button" (click)="makeChoice('left')" [disabled]="gameOver">Izquierda</button>
+        <button class="option-button" (click)="makeChoice('straight')" [disabled]="gameOver">Subir</button>
+        <button class="option-button" (click)="makeChoice('right')" [disabled]="gameOver">Derecha</button>
+        <button class="option-button" (click)="makeChoice('down')" [disabled]="gameOver">Abajo</button>
+      </div>
+  
+    <!-- Modal de resultados -->
+    <div class="modal" *ngIf="gameOver">
+      <div class="modal-content">
+        <h2>¡Juego terminado!</h2>
+        <p>{{ endMessage }}</p>
+        <p><strong>Puntaje final:</strong> {{ score }} / 10</p>
+        <div class="stars">
+          <ng-container *ngFor="let star of stars; let i = index">
+            <span [class.filled]="i < starsEarned">★</span>
+            <span [class.empty]="i >= starsEarned">☆</span>
+          </ng-container>
+        </div>
+        <button class="boton-seguir" (click)="nextActivity()">Siguiente actividad</button>
+      </div>
+    </div>
+  </div>
+  

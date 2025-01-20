@@ -1,0 +1,13 @@
+<div class="modal" *ngIf="showFinalModal">
+    <div class="modal-content">
+      <h2>{{ nivel }}</h2>
+      <p>{{ motivationalMessage }}</p>
+      <div>
+        <img *ngIf="nivel === 'Ahora eres un Gatito'" src="../../../assets/gatito.png" alt="Gatito" width="100" />
+        <img *ngIf="nivel === 'Ahora eres un Rinoceronte'" src="../../../assets/rino.png" alt="Rinoceronte" width="100" />
+        <img *ngIf="nivel === 'Ahora eres Mamut'" src="../../../assets/mamut.png" alt="Mamut" width="100" />
+      </div>
+      <button class="boton-seguir" (click)="finalizar()">Finalizar</button>
+    </div>
+  </div>
+  

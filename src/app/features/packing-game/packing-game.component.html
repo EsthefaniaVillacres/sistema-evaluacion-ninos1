@@ -1,0 +1,45 @@
+<div class="game-container">
+    <div class="header">
+      <h2> Sección 3: Toma de decisiones</h2>
+      <p>Empaca tu mochila para un día en la escuela. Selecciona solo los objetos esenciales.</p>
+      <p><strong>Intentos restantes:</strong> {{ attemptsLeft }}</p>
+      <p><strong>Objetos empacados:</strong> {{ backpack.length }} / 5</p>
+      <p><strong>Puntaje:</strong> {{ score }} / 10</p>
+    </div>
+    <div class="backpack-area">
+      <div class="backpack">
+        <p>Mochila</p>
+        <ul>
+          <li *ngFor="let item of backpack">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="options">
+      <button
+        *ngFor="let item of items"
+        (click)="selectItem(item)"
+        [disabled]="gameOver"
+        class="option-button"
+      >
+        <img [src]="item.imgSrc" [alt]="item.name" />
+      </button>
+    </div>
+    
+  
+    <!-- Modal de resultados -->
+    <div class="modal" *ngIf="gameOver">
+      <div class="modal-content">
+        <h2>¡Juego terminado!</h2>
+        <p>Tu puntaje final es: {{ score }} / 10</p>
+        <div class="stars">
+          <ng-container *ngFor="let star of stars; let i = index">
+            <span [class.filled]="i < starsEarned">★</span>
+            <span [class.empty]="i >= starsEarned">☆</span>
+          </ng-container>
+        </div>
+        <p>{{ motivationalMessage }}</p>
+        <button class="boton-seguir" (click)="nextActivity()">Siguiente actividad</button>
+      </div>
+    </div>
+  </div>
+  

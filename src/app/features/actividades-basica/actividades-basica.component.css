@@ -1,0 +1,148 @@
+.actividad-container {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.orden-correcto {
+  background-color: #d9f3ff;
+  border: 2px solid #007bff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.orden-correcto p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px;
+}
+.orden-correcto mat-icon {
+  font-size: 25px !important ;/* Ajusta el tamaño del ícono */
+  color: #0b0d0b; /* Cambia el color si es necesario */
+  margin: 10px; /* Añade espacio entre los íconos */
+}
+
+
+.drag-drop-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px dashed #225c9a;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+.drag-item {
+  background-color: #f0f8ff;
+  border: 1px solid #007bff;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: grab;
+  border-radius: 5px;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+button {
+  margin-top: 20px;
+}
+
+.correcto {
+  color: green;
+  font-weight: bold;
+}
+
+.incorrecto {
+  color: red;
+  font-weight: bold;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  min-width: 120px;
+}
+
+.cronometro {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #911a0a;
+}
+
+/* Estilos del modal */
+.resultado-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1000;
+  width: 90%;
+  max-width: 400px;
+}
+
+.resultado-modal h2 {
+  font-size: 24px;
+  color: #ff6f00;
+  margin-bottom: 20px;
+}
+
+.resultado-modal .estrellas {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  font-size: 36px; /* Incrementa el tamaño del ícono */
+  width: auto; /* Asegúrate de que el ancho sea dinámico */
+  height: auto; /* Asegúrate de que la altura sea dinámica */
+  align-items: center; /* Alinea verticalmente los íconos */
+  overflow: visible; /* Permite que los íconos sobresalgan si es necesario */
+}
+.resultado-modal mat-icon{
+  font-size: 25px !important; /* Forzar el tamaño */
+  width: 20px; /* Establecer ancho explícito */
+  height: 20px; /* Establecer altura explícita */
+}
+
+.resultado-modal p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.resultado-modal button {
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.resultado-modal button:hover {
+  background-color: #388e3c;
+}
+.drag-item mat-icon {
+  font-size: 20px !important; /* Forzar el tamaño */
+  width: 20px; /* Establecer ancho explícito */
+  height: 20px; /* Establecer altura explícita */
+}
+
+

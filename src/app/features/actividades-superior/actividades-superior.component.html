@@ -1,0 +1,131 @@
+<div class="container">
+  <!-- Preguntas (Basadas en currentQuestionIndex) -->
+  <ng-container *ngIf="currentQuestionIndex < questions.length">
+    <!-- Dimensión Informativa (Primera Pregunta) -->
+    <ng-container *ngIf="currentQuestionIndex === 0">
+      <h2>Dimensión Informativa</h2>
+      <h3>{{ questions[currentQuestionIndex].question }}</h3>
+      <div class="options-container">
+        <button *ngFor="let option of questions[currentQuestionIndex].options"
+          (click)="selectOption(option, currentQuestionIndex)">
+          <img *ngIf="option === 'Garena Free Fire'" src="../../../assets/garena.webp" alt="Garena Free Fire" />
+          <img *ngIf="option === 'Roblox'" src="../../../assets/roblox.jpg" alt="Roblox" />
+          <img *ngIf="option === 'Duolingo'" src="../../../assets/duo.png" alt="Duolingo" />
+        </button>
+      </div>
+    </ng-container>
+
+    <!-- Preguntas sin imágenes (De la 2 a la 5) -->
+    <ng-container *ngIf="currentQuestionIndex >= 1 && currentQuestionIndex < 4">
+      <h2>Dimensión Informativa</h2>
+      <h3>{{ questions[currentQuestionIndex].question }}</h3>
+      <div class="options-container">
+        <button *ngFor="let option of questions[currentQuestionIndex].options"
+          (click)="selectOption(option, currentQuestionIndex)">
+          {{ option }}
+        </button>
+      </div>
+    </ng-container>
+
+    <!-- Preguntas con emojis (Feliz, Serio, Triste) -->
+    <ng-container *ngIf="currentQuestionIndex >= 4 && currentQuestionIndex <= 5">
+      <h2>Dimensión Afectiva</h2>
+      <h3>{{ questions[currentQuestionIndex].question }}</h3>
+      <div class="options-container">
+        <button *ngFor="let option of questions[currentQuestionIndex].options"
+          (click)="selectOption(option, currentQuestionIndex)">
+          <ng-container *ngIf="isScoreOption(option)">
+            <img *ngIf="option.text === 'Feliz'" src="../../../assets/feliz.png" alt="Feliz" />
+            <img *ngIf="option.text === 'Serio'" src="../../../assets/serio.webp" alt="Serio" />
+            <img *ngIf="option.text === 'Triste'" src="../../../assets/triste.webp" alt="Triste" />
+            <span>{{ option.text }}</span>
+          </ng-container>
+        </button>
+      </div>
+    </ng-container>
+
+    <!-- Dimensión Afectiva (Preguntas con imágenes específicas) -->
+    <ng-container *ngIf="currentQuestionIndex === 6">
+      <h2>Dimensión Afectiva</h2>
+      <h3>{{ questions[currentQuestionIndex].question }}</h3>
+      <div class="options-container">
+        <button *ngFor="let option of questions[currentQuestionIndex].options"
+          (click)="selectOption(option, currentQuestionIndex)">
+          <ng-container *ngIf="isScoreOption(option)">
+            <img *ngIf="option.text === 'Duolingo'" src="../../../assets/duo.png" />
+            <img *ngIf="option.text === 'Roblox'" src="../../../assets/roblox.jpg" alt="Roblox" />
+            <img *ngIf="option.text === 'Clash Royale'" src="../../../assets/clash1.webp" alt="Clash Royale" />
+          </ng-container>
+        </button>
+      </div>
+    </ng-container>
+
+    <!-- Dimensión Afectiva - Última pregunta con imágenes -->
+    <ng-container *ngIf="currentQuestionIndex === 7">
+      <h2>Dimensión Afectiva</h2>
+      <h3>{{ questions[currentQuestionIndex].question }}</h3>
+      <div class="options-container">
+        <button *ngFor="let option of questions[currentQuestionIndex].options"
+          (click)="selectOption(option, currentQuestionIndex)">
+          <ng-container *ngIf="isScoreOption(option)">
+            <img *ngIf="option.text === 'Rayuela'" src="../../../assets/rayuela.jpg" alt="Rayuela" />
+            <img *ngIf="option.text === 'Uno'" src="../../../assets/uno.png" alt="Uno" />
+            <img *ngIf="option.text === 'Jenga'" src="../../../assets/jenga.webp" alt="Jenga" />
+            <img *ngIf="option.text === 'Fútbol móvil'" src="../../../assets/fc.jpg" alt="Fútbol móvil" />
+            <img *ngIf="option.text === 'Roblox'" src="../../../assets/roblox.jpg" alt="Roblox" />
+          </ng-container>
+        </button>
+      </div>
+    </ng-container>
+
+    <!-- Última Pregunta -->
+    <ng-container *ngIf="currentQuestionIndex === 8">
+      <h2>Dimensión Final</h2>
+      <h3>{{ questions[currentQuestionIndex].question }}</h3>
+      <div class="options-container">
+        <button *ngFor="let option of questions[currentQuestionIndex].options"
+          (click)="selectOption(option, currentQuestionIndex)">
+          <ng-container *ngIf="isScoreOption(option)">
+            {{ option.text }}
+          </ng-container>
+        </button>
+      </div>
+    </ng-container>
+  </ng-container>
+
+  <!-- Encuesta completada -->
+  <div *ngIf="currentQuestionIndex === questions.length">
+    <p class="completed-message">¡Encuesta completada! Puntaje total: {{ totalScore }}</p>
+    <button class="save-button" (click)="saveResponses()">Guardar respuestas</button>
+  </div>
+
+  <!-- Modal de nivel -->
+ <!-- Modal de nivel -->
+<div class="modal" *ngIf="showGameOverModal">
+  <div class="modal-content">
+    <h2>{{ nivel }}</h2>
+    <img
+      *ngIf="nivel === 'Nivel Villano'"
+      src="../../../assets/villanos.jpg"
+      alt="Nivel Villano"
+      class="modal-image"
+    />
+    <img
+      *ngIf="nivel === 'Nivel Mago'"
+      src="../../../assets/suplente.avif"
+      alt="Nivel Mago"
+      class="modal-image"
+    />
+    <img
+      *ngIf="nivel === 'Nivel Heroe'"
+      src="../../../assets/heroes.png"
+      alt="Nivel Heroe"
+      class="modal-image"
+    />
+    <p>{{ motivationalMessage }}</p>
+    <button class="boton-seguir" (click)="finalizarSesion()">Aceptar</button>
+  </div>
+</div>
+
+
+</div>

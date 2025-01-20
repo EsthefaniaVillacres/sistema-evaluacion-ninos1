@@ -1,0 +1,160 @@
+
+.main-container {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f8fafc, #e8f0fe);
+  justify-content: flex-start; /* Ajusta el contenido hacia la parte superior */
+  padding-bottom: 0; /* Elimina relleno inferior innecesario */
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: #3f51b5;
+  color: white;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 70px;
+  height: 70px;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap; /* Ajusta los enlaces en múltiples líneas si es necesario */
+  gap: 12px;
+  justify-content: center;
+}
+
+.menu a {
+  margin-left: 16px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+  font-size: 16px; /* Ajuste para pantallas más pequeñas */
+}
+
+.menu a:hover {
+  color: #ffcc00;
+}
+.menu {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end; /* Alinea los enlaces a la derecha */
+}
+
+.menu-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 8px 16px;
+  background-color: #3f51b5; /* Azul */
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.menu-link:hover {
+  background-color: #283593; /* Azul más oscuro al pasar el cursor */
+}
+
+
+.welcome {
+  text-align: center;
+  padding: 32px 16px; /* Reduce el padding vertical */
+}
+
+.welcome h2 {
+  font-size: 32px;
+  color: #3f51b5;
+}
+
+.welcome p {
+  font-size: 18px;
+  margin: 16px 0;
+  color: #666;
+}
+
+.welcome-img {
+  max-width: 50%;
+  height: auto;
+  width: auto;
+  margin: 0 auto; /* Centra la imagen */
+  margin-top: 16px; /* Reduce el espacio superior */
+}
+
+/* Media Queries para Pantallas Responsivas */
+
+/* Ajustes para tablets (pantallas medianas) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 16px;
+  }
+
+  .logo-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .menu a {
+    margin-left: 0;
+    font-size: 14px; /* Reducimos el tamaño de los enlaces */
+  }
+
+  .welcome h2 {
+    font-size: 28px; /* Ajustamos el tamaño del título */
+  }
+
+  .welcome p {
+    font-size: 16px;
+  }
+}
+
+/* Ajustes para móviles (pantallas pequeñas) */
+@media (max-width: 480px) {
+  .header {
+    padding: 8px 12px;
+  }
+
+  .logo-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .menu {
+    flex-direction: column; /* Los enlaces se colocan en una columna */
+    gap: 8px;
+  }
+
+  .menu a {
+    font-size: 12px; /* Reducimos aún más el tamaño de los enlaces */
+  }
+
+  .welcome h2 {
+    font-size: 24px; /* Títulos más pequeños */
+  }
+
+  .welcome p {
+    font-size: 14px;
+  }
+
+  .welcome-img {
+    max-width: 90%;
+    height: auto;
+    margin-top: 2px;
+  }
+}

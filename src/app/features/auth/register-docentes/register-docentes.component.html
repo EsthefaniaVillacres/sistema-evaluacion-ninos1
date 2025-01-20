@@ -1,0 +1,94 @@
+<div class="container mt-5 d-flex justify-content-center">
+  <div class="card p-4 shadow-lg" style="max-width: 500px; width: 100%; border-radius: 12px;">
+    <h2 class="text-center mat-typography mb-4">Registro de Docentes</h2>
+    <form [formGroup]="docenteForm" (ngSubmit)="onSubmit()" class="d-flex flex-column gap-4">
+      <mat-divider></mat-divider>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Apellido</mat-label>
+        <input matInput formControlName="apellido" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Sexo</mat-label>
+        <mat-select formControlName="sexo" required>
+          <mat-option value="masculino">Masculino</mat-option>
+          <mat-option value="femenino">Femenino</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Edad</mat-label>
+        <mat-select formControlName="edad" required>
+          <mat-option value="menos de 30">Menos de 30 años</mat-option>
+          <mat-option value="31-40">31-40 años</mat-option>
+          <mat-option value="41-50">41-50 años</mat-option>
+          <mat-option value="51-60">51-60 años</mat-option>
+          <mat-option value="más de 61">Más de 61 años</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Años de Experiencia</mat-label>
+        <mat-select formControlName="experiencia" required>
+          <mat-option value="0-5 años">0-5 años</mat-option>
+          <mat-option value="6-10 años">6-10 años</mat-option>
+          <mat-option value="11-15 años">11-15 años</mat-option>
+          <mat-option value="16-20 años">16-20 años</mat-option>
+          <mat-option value="21-25 años">21-25 años</mat-option>
+          <mat-option value="Más de 26 años">Más de 26 años</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Nivel de Formación</mat-label>
+        <mat-select formControlName="nivelFormacion" required>
+          <mat-option value="tecnologado">Tecnologado</mat-option>
+          <mat-option value="licenciatura">Licenciatura</mat-option>
+          <mat-option value="doctorado">Doctorado</mat-option>
+          <mat-option value="maestria">Maestría</mat-option>
+          <mat-option value="especializacion">Especialización</mat-option>
+          <mat-option value="otro">Otro</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Escuela</mat-label>
+        <mat-select formControlName="escuela" required>
+          <mat-option value="E.B Tsunki">E.B Tsunki</mat-option>
+          <mat-option value="U.E Tobias Celestino Zanimba Gavilanes">
+            U.E Tobias Celestino Zanimba Gavilanes
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      
+
+      <mat-form-field appearance="outline">
+        <mat-label>Correo</mat-label>
+        <input matInput type="email" formControlName="correo" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" formControlName="contrasena" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Confirmar Contraseña</mat-label>
+        <input matInput type="password" formControlName="confirmarContrasena" required />
+      </mat-form-field>
+
+      <mat-divider></mat-divider>
+
+      <button mat-raised-button color="primary" class="w-100" [disabled]="docenteForm.invalid">
+        Registrar
+      </button>
+    </form>
+  </div>
+</div>

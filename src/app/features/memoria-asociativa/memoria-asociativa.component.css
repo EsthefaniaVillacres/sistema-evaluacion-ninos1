@@ -1,0 +1,146 @@
+.juego-container {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.cronometro {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #911a0a;
+}
+.resultado-modal mat-icon{
+  font-size: 10px !important; /* Forzar el tamaño */
+  width: 20px; /* Establecer ancho explícito */
+  height: 20px; /* Establecer altura explícita */
+}
+.tablero {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  justify-content: center;
+}
+
+.tarjeta {
+  width: 80px;
+  height: 80px;
+  perspective: 1000px;
+  position: relative;
+}
+
+.cara {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.6s;
+}
+
+.reverso {
+  background-color: #ffc107;
+  border: 2px solid #ff9800;
+}
+
+.frente {
+  background-color: #4caf50;
+  transform: rotateY(180deg);
+  color: white;
+}
+
+.tarjeta.volteada .reverso {
+  transform: rotateY(180deg);
+}
+
+.tarjeta.volteada .frente {
+  transform: rotateY(0);
+}
+
+.resultado {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.modal-content button {
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #388e3c;
+}
+.estrellas {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.estrellas mat-icon {
+  font-size: 36px;
+  color: #ffc107;
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 1000;
+}
+
+.modal.visible {
+  display: block;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.modal-content h2 {
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+.modal-content .estrellas {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.modal-content .estrella-icon {
+  font-size: 25px;
+  color: #ffc107;
+}
+
+.modal-content button {
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #388e3c;
+}
+

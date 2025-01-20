@@ -1,0 +1,30 @@
+.static-header {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: #3f51b5; /* Color de fondo azul */
+    color: white; /* Texto blanco */
+    padding: 16px 24px; /* Espaciado interno */
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .logo-img {
+    width: 60px; /* Ajusta el tamaño del logo */
+    height: 60px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  body.home-page .static-header {
+    display: none;
+  }
+  

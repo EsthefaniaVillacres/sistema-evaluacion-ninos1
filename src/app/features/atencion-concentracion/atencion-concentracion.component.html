@@ -1,0 +1,35 @@
+<div class="juego-container">
+    <h2>Sección 2: Atención y Concentración</h2>
+    <p>Encuentra el símbolo diferente:</p>
+    <div class="iconos-secuencia">
+      <div
+        *ngFor="let icono of secuencia; let i = index"
+        class="icono"
+        [class.correcto]="esCorrecto && i === indexDiferente"
+        [class.incorrecto]="resultadoVisible && seleccion === i && !esCorrecto"
+        (click)="seleccionarIcono(i)"
+      >
+        {{ icono }}
+      </div>
+    </div>
+  
+    <div class="acciones">
+      <button mat-raised-button color="primary" (click)="verificarRespuesta()" [disabled]="resultadoVisible">
+        Verificar
+      </button>
+      <button mat-raised-button color="accent" *ngIf="botonSeguirVisible" (click)="siguienteActividad()">
+        Seguir
+      </button>
+    </div>
+  
+    <div *ngIf="resultadoVisible" class="retroalimentacion">
+      <p [class.exito]="esCorrecto" [class.error]="!esCorrecto">
+        {{ mensajeResultado }}
+      </p>
+    </div>
+  
+    <div class="cronometro">
+      Tiempo restante: {{ cronometro }} segundos
+    </div>
+  </div>
+  

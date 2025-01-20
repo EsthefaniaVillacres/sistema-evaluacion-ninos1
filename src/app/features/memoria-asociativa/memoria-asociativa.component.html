@@ -1,0 +1,54 @@
+<div class="juego-container">
+  <!-- Cronómetro -->
+  <div class="cronometro">
+    <strong>Tiempo restante: {{ tiempoRestante }} segundos</strong>
+  </div>
+  <div>
+    <h2>Sección 1: Memoria</h2>
+    <h3>Memoria asociativa</h3>
+
+    <p>
+    Gira las cartas y encuentra las parejas de imágenes antes que el tiempo finalice
+    </p>
+  </div>
+
+  <!-- Tablero del juego -->
+  <div class="tablero">
+    <div
+      *ngFor="let tarjeta of tarjetas; let i = index"
+      class="tarjeta"
+      [class.volteada]="tarjeta.volteada || tarjeta.encontrada"
+      (click)="voltearTarjeta(i)"
+    >
+      <!-- Cara de reverso de la tarjeta -->
+      <div class="cara reverso"></div>
+
+      <!-- Cara frontal de la tarjeta -->
+      <div class="cara frente">
+        <mat-icon>{{ tarjeta.icono }}</mat-icon>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Finalización -->
+  <div class="modal" [class.visible]="juegoTerminado">
+    <div class="modal-content">
+      <!-- Mensaje de resultado -->
+      <h2>{{ mensajeResultado }}</h2>
+
+      <!-- Puntuación Final -->
+      <p class="puntuacion">Puntuación Final: {{ puntaje }}</p>
+
+      <!-- Estrellas -->
+      <div class="estrellas">
+        <mat-icon *ngFor="let estrella of estrellas" class="estrella-icon">{{ estrella }}</mat-icon>
+      </div>
+
+      <!-- Mensaje motivacional -->
+      <p>¡Gracias por jugar! ¿Estás listo para continuar?</p>
+
+      <!-- Botón para continuar -->
+      <button mat-raised-button color="primary" (click)="irSiguienteActividad()">Seguir</button>
+    </div>
+  </div>
+</div>

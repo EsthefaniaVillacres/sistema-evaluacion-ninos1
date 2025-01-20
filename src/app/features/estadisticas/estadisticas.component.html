@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="filtros">
+    <label for="escuela">Escuela:</label>
+    <select id="escuela" [(ngModel)]="filtros.escuela">
+      <option *ngFor="let escuela of escuelas" [value]="escuela">{{ escuela }}</option>
+    </select>
+    <button (click)="cargarRespuestas()">Aplicar Filtros</button>
+  </div>
+
+  <div class="resultados">
+    <h3>Respuestas Básica</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Juego 1</th>
+          <th>Juego 2</th>
+          <th>Juego 3</th>
+          <th>Juego 4</th>
+          <th>Juego 5</th>
+          <th>Juego 6</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let respuesta of respuestasBasica">
+          <td>{{ respuesta.id }}</td>
+          <td>{{ respuesta.juego1 }}</td>
+          <td>{{ respuesta.juego2 }}</td>
+          <td>{{ respuesta.juego3 }}</td>
+          <td>{{ respuesta.juego4 }}</td>
+          <td>{{ respuesta.juego5 }}</td>
+          <td>{{ respuesta.juego6 }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Respuestas Superior</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Juego 1</th>
+          <th>Juego 2</th>
+          <th>Juego 3</th>
+          <th>Juego 4</th>
+          <th>Juego 5</th>
+          <th>Juego 6</th>
+          <th>Juego 7</th>
+          <th>Juego 8</th>
+          <th>Juego 9</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let respuesta of respuestasSuperior">
+          <td>{{ respuesta.id }}</td>
+          <td>{{ respuesta.juego1_respuesta }}</td>
+          <td>{{ respuesta.juego2_respuesta }}</td>
+          <td>{{ respuesta.juego3_respuesta }}</td>
+          <td>{{ respuesta.juego4_respuesta }}</td>
+          <td>{{ respuesta.juego5 }}</td>
+          <td>{{ respuesta.juego6 }}</td>
+          <td>{{ respuesta.juego7 }}</td>
+          <td>{{ respuesta.juego8 }}</td>
+          <td>{{ respuesta.juego9 }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

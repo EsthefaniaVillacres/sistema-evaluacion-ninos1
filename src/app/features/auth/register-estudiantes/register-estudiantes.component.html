@@ -1,0 +1,81 @@
+<div class="container mt-5 d-flex justify-content-center">
+  <div class="card p-4 shadow-lg" style="max-width: 500px; width: 100%; border-radius: 12px;">
+    <h2 class="text-center mat-typography mb-4">Registro de Estudiantes</h2>
+    <form [formGroup]="estudianteForm" (ngSubmit)="onSubmit()" class="d-flex flex-column gap-4">
+      <!-- Campo: Nombre -->
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre" required />
+      </mat-form-field>
+
+      <!-- Campo: Apellido -->
+      <mat-form-field appearance="outline">
+        <mat-label>Apellido</mat-label>
+        <input matInput formControlName="apellido" required />
+      </mat-form-field>
+
+      <!-- Campo: Sexo -->
+      <mat-form-field appearance="outline">
+        <mat-label>Sexo</mat-label>
+        <mat-select formControlName="sexo" required>
+          <mat-option value="masculino">Masculino</mat-option>
+          <mat-option value="femenino">Femenino</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Campo: Edad -->
+      <mat-form-field appearance="outline">
+        <mat-label>Edad</mat-label>
+        <mat-select formControlName="edad" required>
+          <mat-option value="8-9 años">8-9 años</mat-option>
+          <mat-option value="10-11 años">10-11 años</mat-option>
+          <mat-option value="11-12 años">11-12 años</mat-option>
+          <mat-option value="13-14 años">13-14 años</mat-option>
+          <mat-option value="15 o más">15 o más</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+
+      <mat-form-field appearance="outline">
+        <mat-label>Unidad Educativa</mat-label>
+        <mat-select formControlName="escuela" required>
+          <mat-option value="E.B Tsunki">E.B Tsunki</mat-option>
+          <mat-option value="U.E Tobias Celestino Zanimba Gavilanes">U.E Tobias Celestino Zanimba Gavilanes</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+
+      <mat-form-field appearance="outline">
+        <mat-label>Nivel</mat-label>
+        <mat-select formControlName="nivel" required>
+          <mat-option value="basica">5to a 7mo</mat-option>
+          <mat-option value="superior">8vo a 10mo</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+
+
+      <!-- Campo: Correo -->
+      <mat-form-field appearance="outline">
+        <mat-label>Correo</mat-label>
+        <input matInput type="email" formControlName="correo" required />
+      </mat-form-field>
+
+      <!-- Campo: Contraseña -->
+      <mat-form-field appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" formControlName="contrasena" required />
+      </mat-form-field>
+
+      <!-- Campo: Confirmar Contraseña -->
+      <mat-form-field appearance="outline">
+        <mat-label>Confirmar Contraseña</mat-label>
+        <input matInput type="password" formControlName="confirmarContrasena" required />
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="w-100" [disabled]="estudianteForm.invalid">
+        Registrar
+      </button>
+    </form>
+  </div>
+</div>

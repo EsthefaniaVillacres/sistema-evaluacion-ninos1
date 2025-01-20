@@ -1,0 +1,33 @@
+<div class="menu-container">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" opened class="sidenav">
+      <h3 class="menu-title">Menú</h3>
+      <!-- Menú dinámico -->
+      <ul class="menu-list">
+        <li *ngFor="let item of menuItems">
+          <a mat-button [routerLink]="item.route">
+            <mat-icon class="menu-icon">{{ item.icon }}</mat-icon>
+            {{ item.label }}
+          </a>
+        </li>
+      </ul>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <button mat-icon-button class="menu-toggle" (click)="sidenav.toggle()">
+        <mat-icon>{{ sidenav.opened ? 'chevron_left' : 'menu' }}</mat-icon>
+      </button>
+
+      <!-- Componente dinámico -->
+      <div *ngIf="activeComponent === 'actividades-basica'">
+        <app-actividades-basica></app-actividades-basica>
+      </div>
+      <div *ngIf="activeComponent === 'actividades-superior'">
+        <app-actividades-superior></app-actividades-superior>
+      </div>
+      <div *ngIf="activeComponent === 'estadisticas'">
+        <app-estadisticas></app-estadisticas>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
